@@ -1,38 +1,151 @@
 .App {
-  text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: aliceblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Editor {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    height: 90vh;
+    width: 90vw;
+    margin: 0;
+    z-index: 0;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Catalog {
+    height: 100%;
+    border-right: 2px solid black;
+    overflow: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.HeadList {
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.Spawner {
+    position: relative;
+    margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.RightSide {
+    /* width: 100%; */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.Panel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.Utils {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.TopBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Event {
+    user-select: none;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    position: absolute;
+    background-clip: padding-box;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.EventLabel {
+    margin-top: 30px;
+    margin-bottom: 4px;
+}
+
+.Action {
+    user-select: none;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    background-clip: padding-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.ParamInfo {
+    /* background-color: white; */
+    /* padding: 1px; */
+    font-style: italic;
+}
+
+.Arrow {
+    cursor: 'pointer';
+    z-index: 3;
+}
+
+.ActionLabel {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.TopConnector {
+    position: absolute;
+    background-clip: padding-box;
+}
+
+.BottomConnector {
+    position: absolute;
+    background-clip: padding-box;
+}
+
+.ArrowBox {
+    /* z-index: 0; */
+    cursor: pointer;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+}
+
+.ArrowBox:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+}
+
+.ArrowBox.selected {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+}
+
+.ArrowBoxContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.ArrowLabel {
+    color: black;
+    cursor: pointer;
+    /* mix-blend-mode: exclusion; */
+    /* background-color: white; */
 }
