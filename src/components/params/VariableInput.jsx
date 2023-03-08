@@ -10,7 +10,7 @@ const VariableInput = (props) => {
     const { input, params, update, secondary } = props;
 
     const handleChange = (event) => {
-        update(event.target.value);
+        update(LOOKUP_FLAG + event.target.value);
     };
 
     const icon = {};

@@ -39,7 +39,10 @@ const Output = (props) => {
 
     useEffect(() => {
         if (output.name.charAt(0) === LOOKUP_FLAG) {
-            const lookup_name = params[output.name.substring(1)] ?? '';
+            let lookup_name = params[output.name.substring(1)] ?? '';
+            if (lookup_name.charAt(0) === LOOKUP_FLAG) {
+                lookup_name = lookup_name.substring(1);
+            }
             setName(lookup_name.length > 0 ? lookup_name : output.name);
         }
     }, [inputs, params[output.name.substring(1)], output.name]);

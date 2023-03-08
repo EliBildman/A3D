@@ -41,15 +41,12 @@ const EitherInput = (props) => {
     );
 
     if (inputType === INPUT_TYPES.VARIABLE) {
-        const updateWithFlag = (value) => {
-            update(LOOKUP_FLAG + value);
-        };
         return (
             <VariableInput
                 input={input}
                 params={params}
                 secondary={inputButton}
-                update={updateWithFlag}
+                update={update}
             />
         );
     }
