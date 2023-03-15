@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { headstoSpawners } from './translation';
 
-const api_url = 'http://127.0.0.1:3005';
+const api_url = process.env.REACT_APP_API_URL;
+console.log(api_url)
 
 export const getHeads = async () => {
     const actionsRes = await axios.get(`${api_url}/actions`);
