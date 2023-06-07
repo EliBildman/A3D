@@ -3,7 +3,7 @@ import { headstoSpawners } from './translation';
 import io from 'socket.io-client';
 
 const api_url =
-  process.env.REACT_APP_STAGE === 'debug'
+  process.env.REACT_APP_STAGE === 'dev'
     ? process.env.REACT_APP_API_DEBUG
     : process.env.REACT_APP_API_URL;
 

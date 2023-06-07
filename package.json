@@ -23,11 +23,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-dev": "REACT_APP_STAGE=dev react-scripts start",
+    "start-release": "REACT_APP_STAGE=release react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "daemon": "pm2 start daemon.config.json"
+    "daemon": "pm2 start daemon.config.json",
+    "docker_build_pi": "docker build --platform linux/arm/v7 -t elibildman/a3d:pi . && docker push elibildman/a3d:pi"
   },
   "eslintConfig": {
     "extends": [
