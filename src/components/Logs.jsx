@@ -50,7 +50,6 @@ const Logs = () => {
         minWidth: open ? '300px' : '0px',
         padding: 0,
         overflowY: 'auto',
-        whiteSpace: 'nowrap',
         overflowX: 'hidden',
         transition: `flex ${ANIMATION_TIME}s ease, min-width ${ANIMATION_TIME}s ease`,
       }}

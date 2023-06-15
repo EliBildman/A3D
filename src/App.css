@@ -15,6 +15,12 @@
   background-color: RGB(100, 100, 100);
 }
 
+.UtilTitle {
+  padding-left: 10px;
+  /* font-weight: bold; */
+  /* padding-right: 10px; */
+}
+
 .Logs {
   height: 100%;
   border: 2px solid black;

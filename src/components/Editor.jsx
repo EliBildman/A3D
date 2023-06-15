@@ -24,6 +24,7 @@ const OUTLINE_WIDTH = 2;
 const Editor = (props) => {
   const panelRef = useRef();
   const [pageInd, _setPageInd] = useState(0);
+  const [pageName, setPageName] = useState('');
   const [entityInfo, _setEntityInfo] = useState({});
   const [spawnerInfo, setSpawnerInfo] = useState([]);
   const [held, setHeld] = useState([]);
@@ -37,7 +38,9 @@ const Editor = (props) => {
     getHeads().then((heads) => {
       setSpawnerInfo(heads);
       getPage(pageInd).then((page) => {
-        _setEntityInfo(pageToEntities(page, heads, BLOCK_HEIGHT));
+        const [entities, pageName] = pageToEntities(page, heads, BLOCK_HEIGHT);
+        _setEntityInfo(entities);
+        setPageName(pageName);
       });
     });
   }, [pageInd]);
@@ -45,7 +48,7 @@ const Editor = (props) => {
   const _save = () => {
     setUnsaved(false);
     setWarned(false);
-    savePage(entitiesToPage(pageInd, entityInfo));
+    savePage(entitiesToPage(pageInd, entityInfo, pageName));
   };
 
   const setPage = (ind) => {
@@ -408,6 +411,11 @@ const Editor = (props) => {
     }
   });
 
+  const changePageNameCallback = (name) => {
+    setPageName(name);
+    setUnsaved(true);
+  };
+
   return (
     <div
       id="Editor"
@@ -434,6 +442,8 @@ const Editor = (props) => {
             pageInd={pageInd}
             setPageInd={setPage}
             unsaved={unsaved}
+            pageName={pageName}
+            setPageName={changePageNameCallback}
           />
         </div>
         <div className="Panel" ref={panelRef}>

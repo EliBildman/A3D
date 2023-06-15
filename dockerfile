@@ -28,5 +28,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port 80 for the web server
 EXPOSE 3000
 
+ENV REACT_APP_STAGE=release
+
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
